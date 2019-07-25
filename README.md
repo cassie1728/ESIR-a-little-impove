@@ -46,4 +46,4 @@ Based on ASTER,ESIR have some improvements.
 
 　　这类模型训练时的主要问题就是，矫正网络对参数初始化十分敏感。ASTER和RARE中也提到，完全随机的初始化参数会导致收敛问题，其产生的高度扭曲的图片会影响识别网络的效果，进而影响矫正网络（因为矫正网络的训练是由识别效果做导向的）。
 <br>
-　　ESIR首先定义了一个辅助参数![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_0$$)，
+　　ESIR首先定义了一个辅助参数![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_0$$)，开始等于![](http://chart.googleapis.com/chart?cht=tx&chl=$$P'$$)，计算![](http://chart.googleapis.com/chart?cht=tx&chl=$$P=P_0+$\Delta$P$$)
