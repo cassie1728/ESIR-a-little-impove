@@ -33,15 +33,15 @@ Based on ASTER,ESIR have some improvements.
 
 ![](https://github.com/cassie1728/ESIR-a-little-impove/raw/master/esir3.jpg)
 
-ASTER只能生成一张矫正图，ESIR则在这点做了改进，通过迭代可以生成多张矫正图。（反正最后也只用一张…不知道为啥非得这么说 == ）<br>
+　　ASTER只能生成一张矫正图，ESIR则在这点做了改进，通过迭代可以生成多张矫正图。（反正最后也只用一张…不知道为啥非得这么说 == ）<br>
 
-通过多次矫正，即可提升矫正效果。<br>
+　　通过多次矫正，即可提升矫正效果。<br>
 
-但是如果不加控制的多次直接迭代，则会造成“边界效应（boundary effect）”问题，即每次迭代都会使一部分像素点在采样区域外面，这样就会忽视掉一些text的像素点。另外，由于多次进行双线性插值，也会对图像清晰度造成影响。
+　　但是如果不加控制的多次直接迭代，则会造成“边界效应（boundary effect）”问题，即每次迭代都会使一部分像素点在采样区域外面，这样就会忽视掉一些text的像素点。另外，由于多次进行双线性插值，也会对图像清晰度造成影响。
 <br>
 <br>
-针对边界效应和清晰度影响，ESIR设计了如图的迭代流程。![](http://chart.googleapis.com/chart?cht=tx&chl=$$T$$)是TPS的参数矩阵，![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_l$$),![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_2$$)…是经过变换后得到的参数（2L个端点坐标）。<br>
+　　针对边界效应和清晰度影响，ESIR设计了如图的迭代流程。![](http://chart.googleapis.com/chart?cht=tx&chl=$$T$$)是TPS的参数矩阵，![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_l$$),![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_2$$)…是经过变换后得到的参数（2L个端点坐标）。<br>
 
-这里的操作就是将中间产生的矫正图仅仅用作估计参数![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_i$$)，然后使用原始的Input Image计算参数矩阵![](http://chart.googleapis.com/chart?cht=tx&chl=$$T$$)，这样就可以有效解决以上两个问题。
+　　这里的操作就是将中间产生的矫正图仅仅用作估计参数![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_i$$)，然后使用原始的Input Image计算参数矩阵![](http://chart.googleapis.com/chart?cht=tx&chl=$$T$$)，这样就可以有效解决以上两个问题。
 
 
