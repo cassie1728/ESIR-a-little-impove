@@ -46,4 +46,4 @@ Based on ASTER,ESIR have some improvements.
 
 　　这类模型训练时的主要问题就是，矫正网络对参数初始化十分敏感。ASTER和RARE中也提到，完全随机的初始化参数会导致收敛问题，其产生的高度扭曲的图片会影响识别网络的效果，进而影响矫正网络（因为矫正网络的训练是由识别效果做导向的）。
 <br>
-　　ESIR首先定义了一个辅助参数![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_0$$)，开始等于![](http://chart.googleapis.com/chart?cht=tx&chl=$$P'$$)，计算![](http://chart.googleapis.com/chart?cht=tx&chl=$$P=P_0+\DeltaP$$)
+　　ESIR首先定义了一个辅助参数![](http://chart.googleapis.com/chart?cht=tx&chl=$$P_0$$)，开始等于![](http://chart.googleapis.com/chart?cht=tx&chl=$$P'$$)，计算![](http://chart.googleapis.com/chart?cht=tx&chl=$$P=P_0-\Delta+P$$)（这里的加号应该是加号，不知道为什么+不显示T_T）。然后对![](http://chart.googleapis.com/chart?cht=tx&chl=$$\Delta+P$$)做迭代更新，![](http://chart.googleapis.com/chart?cht=tx&chl=$$\Delta+P$$)是很小的值，那么初始的![](http://chart.googleapis.com/chart?cht=tx&chl=$$P$$)就与![](http://chart.googleapis.com/chart?cht=tx&chl=$$P'$$)值相近。这样就防止开始阶段产生高度扭曲的图片，同时加快收敛。另外，不直接预测参数![](http://chart.googleapis.com/chart?cht=tx&chl=$$P$$)，而是根据迭代更新的![](http://chart.googleapis.com/chart?cht=tx&chl=$$\Delta+P$$)来逐渐学习参数![](http://chart.googleapis.com/chart?cht=tx&chl=$$P$$)，使得矫正网络训练更平稳。
