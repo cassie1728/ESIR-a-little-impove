@@ -19,4 +19,8 @@ ESIR的大致流程和ASTER基本一致，改进地方主要在矫正网络部�
 
 ![](https://github.com/cassie1728/ESIR-a-little-impove/raw/master/esir2.jpg)
 
-与ASTER使用K个控制点辅助矫正不同，ESIR使用1条水平中线和L条线段来辅助矫正。<br>
+与ASTER使用K个控制点辅助矫正不同，ESIR使用1条水平中线(拟合文字走向)和L条线段（估计竖直方向和边界）来辅助矫正。<br>
+
+采用多项式拟合水平中线，以图片中心做原点，标准化坐标。多项式中有`K+1`个参数。
+![](https://github.com/cassie1728/ESIR-a-little-impove/raw/master/esir4.jpg)
+L条线段由下方公式表示，
