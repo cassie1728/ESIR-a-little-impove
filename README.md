@@ -5,6 +5,10 @@ Based on ASTER,ESIR have some improvements.
 
 ### 贡献点（3个）
 
-1. a novel line-fitting transformation. 
-2. iterative rectification framework.
-3. parameter initialization and superior recognition performance.
+1. a novel line-fitting transformation. 使用直线和线段帮助矫正形变
+2. iterative rectification framework. 多次（迭代）矫正
+3. parameter initialization and superior recognition performance. 参数初始化创新+识别率稍有提高
+
+### Pipeline and Struction
+
+![]()
