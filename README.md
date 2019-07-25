@@ -12,3 +12,10 @@ Based on ASTER,ESIR have some improvements.
 ### Pipeline and Struction
 
 ![](https://github.com/cassie1728/ESIR-a-little-impove/raw/master/esir1.jpg)
+
+ESIR的大致流程和ASTER基本一致，改进地方主要在矫正网络部分：改变了拟合形变的方式，并增加了迭代的矫正流程。
+
+#### 1. line-fitting transformation
+
+![](https://github.com/cassie1728/ESIR-a-little-impove/raw/master/esir2.jpg)
+
