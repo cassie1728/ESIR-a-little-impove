@@ -23,4 +23,4 @@ ESIR的大致流程和ASTER基本一致，改进地方主要在矫正网络部�
 
 采用多项式拟合水平中线，以图片中心做原点，标准化坐标。多项式中有`K+1`个参数。
 ![](https://github.com/cassie1728/ESIR-a-little-impove/raw/master/esir4.jpg)
-L条线段由下方公式表示，
+L条线段由下方公式表示，![](http://chart.googleapis.com/chart?cht=tx&chl=$$r_l$$)
