@@ -21,7 +21,7 @@ Based on ASTER,ESIR have some improvements.
 
 　　与ASTER使用K个控制点辅助矫正不同，ESIR使用1条水平中线(拟合文字走向)和L条线段（估计竖直方向和边界）来辅助矫正。<br>
 
-　　采用多项式拟合水平中线，以图片中心做原点，标准化坐标。多项式中有`K+1`个参数。
+　　采用K阶多项式拟合水平中线，以图片中心做原点，标准化坐标。多项式中有`K+1`个参数。
 ![](https://github.com/cassie1728/ESIR-a-little-impove/raw/master/esir4.jpg)
 <br>
 　　L条线段由下方公式表示，其中![](http://chart.googleapis.com/chart?cht=tx&chl=$$r_l$$)表示线段长度。有`3L`个参数。
@@ -32,4 +32,9 @@ Based on ASTER,ESIR have some improvements.
 #### 2. Iterative Rectification
 
 ![](https://github.com/cassie1728/ESIR-a-little-impove/raw/master/esir3.jpg)
+
+ASTER只能生成一张矫正图，ESIR则在这点做了改进，通过迭代可以生成多张矫正图。（反正最后也只用一张…不知道为啥非得这么说 == ）<br>
+
+通过多次矫正，即可提升矫正效果。<br>
+
 
