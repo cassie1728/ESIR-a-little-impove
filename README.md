@@ -19,3 +19,4 @@ ESIR的大致流程和ASTER基本一致，改进地方主要在矫正网络部�
 
 ![](https://github.com/cassie1728/ESIR-a-little-impove/raw/master/esir2.jpg)
 
+与ASTER使用K个控制点辅助矫正不同，ESIR使用1条水平中线和L条线段来辅助矫正。<br>
