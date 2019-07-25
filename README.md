@@ -29,4 +29,6 @@ Based on ASTER,ESIR have some improvements.
 <br>
 　　所以需要学习的参数一种有`3L+K+1`个。这些参数一旦确定，L条线段的`2L`个端点就可以计算，这里2L个端点就相当于ASTER中的K个控制点。将2L个端点标准化到(-0.5,0.5)之间，再做TPS变换。其余步骤与ASTER相同。
 
+#### 2. Iterative Rectification
+
 
